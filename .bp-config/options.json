@@ -1,3 +1,7 @@
 {
 	"PHP_EXTENSIONS": ["mysqli"]
+<<<<<<< Upstream, based on 206d52f00781ce609106b47619a02d64dd0e575a
 }
+=======
+}
+>>>>>>> 750bf93 verificado

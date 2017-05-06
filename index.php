@@ -2,7 +2,7 @@
  <html>
  <body>
    <div name="top" align="center">
- 	<img src="images/top.jpg" width="1500" height="150"/>
+ 	<img src="images/top.png" width="1500" height="200"/>
    </div>
    
  <div name="middle" align="center">
@@ -18,24 +18,21 @@
 		}
 		$sql="select * from servicios";
 		$result=$conn->query($sql);
+		?>
+			<th colspan="2"> For data scientists </th>
+		    <th colspan="2"> For IT professionals </th>
+		<?php 
 		if($result->num_rows > 0){
-			?>
-			<tr>
-				<th>Codigo</th>
-				<th>Nombre</th>
-				<th>Descripcion</th>
-				<th>Imagen</th>
-			</tr>
-			<?php
+				
 			while($row=$result->fetch_assoc()){
 				?>
 				<tr>
-					<td><?php echo $row['codigo_servicio']?></td>
-					<td><?php echo $row['nombre_servicio']?></td>
-					<td><?php echo $row['descripcion_servicio']?></td>
 					<td><img src="<?php echo $row['imagen_servicio']?>"/></td>
-				</tr>
-				<?php
+					<td><?php echo $row['nombre_servicio']?><br><?php echo $row['descripcion_servicio']?></td><?php
+					$row=$result->fetch_assoc() ?>
+					<td><img src="<?php echo $row['imagen_servicio']?>"/></td>
+					<td><?php echo $row['nombre_servicio']?><br><?php echo $row['descripcion_servicio']?></td>
+				</tr> <?php				
 			}
 		}
 		else{
@@ -46,7 +43,7 @@
 	  </table>
 	 </div>
  <div name="bottom" align="center">
- 	<img src="images/top.jpg" width="1500" height="150"/>
+ 	<img src="images/under.png" width="1500" height="275"/>
  </div>
  
  </body>
